@@ -23,8 +23,8 @@ public class SurveyViewModel extends ViewModel {
     public MutableLiveData<List<Survey>> mutableLiveData=new MutableLiveData<List<Survey>>();
     public List<Survey> surveyList1=new ArrayList<Survey>();
     public List<Survey> surveyList2=new ArrayList<Survey>();
-    public String from="";
-    public String to="";
+    static public String from="";
+    static public String to="";
     public String generic="1";
 
     @Inject
@@ -75,10 +75,31 @@ public class SurveyViewModel extends ViewModel {
                         Log.e("Code: ", "onResponse: " + String.valueOf(response.code()));
                         return;
                     }
-                    //key=true;
                     surveyList1=response.body();
-                    //mutableLiveData.setValue(response.body());
-                    Log.i("onResponse", response.body().toString());
+                    getSurveyRepository.getSurveys("1", SurveyViewModel.from,SurveyViewModel.to).enqueue(new Callback<List<Survey>>() {
+                        @Override
+                        public void onResponse(Call<List<Survey>> call, Response<List<Survey>> response) {
+                            if (!response.isSuccessful()) {
+                                Log.e("Code: ", "onResponse: " + String.valueOf(response.code()));
+                                return;
+                            }
+                            surveyList2=response.body();
+                            //mutableLiveData.setValue(response.body());
+                            for (Survey survey: surveyList2){
+                                surveyList1.add(survey);
+                            }
+                            mutableLiveData.setValue(surveyList1);
+                            Log.i("onResponse", response.body().toString() + response.toString());
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<Survey>> call, Throwable t) {
+                            Log.e("onFailure-retrofit", t.getMessage());
+                        }
+                    });
+
+                    //mutableLiveData.setValue(surveyList1);
+                    Log.i("onResponse", response.body().toString() + response.toString());
                 }
 
                 @Override
@@ -86,7 +107,7 @@ public class SurveyViewModel extends ViewModel {
                     Log.e("onFailure-retrofit", t.getMessage());
                 }
             });
-            getSurveyRepository.getSurveys("1", from, to).enqueue(new Callback<List<Survey>>() {
+            /*getSurveyRepository.getSurveys("1", from, to).enqueue(new Callback<List<Survey>>() {
                 @Override
                 public void onResponse(Call<List<Survey>> call, Response<List<Survey>> response) {
                     if (!response.isSuccessful()) {
@@ -94,7 +115,11 @@ public class SurveyViewModel extends ViewModel {
                         return;
                     }
                     surveyList2=response.body();
+                    for (Survey survey:surveyList2){
+                        surveyList1.add(survey);
+                    }
 
+                    mutableLiveData.setValue(surveyList1);
                     Log.i("onResponse", response.body().toString());
                 }
 
@@ -102,12 +127,8 @@ public class SurveyViewModel extends ViewModel {
                 public void onFailure(Call<List<Survey>> call, Throwable t) {
                     Log.e("onFailure-retrofit", t.getMessage());
                 }
-            });
-            for (Survey survey:surveyList2){
-                surveyList1.add(survey);
-            }
+            });*/
 
-            mutableLiveData.setValue(surveyList1);
         }
         }
 
@@ -157,7 +178,30 @@ public class SurveyViewModel extends ViewModel {
                         Log.e("Code: ", "onResponse: " + String.valueOf(response.code()));
                         return;
                     }
-                    mutableLiveData.setValue(response.body());
+                    surveyList1=response.body();
+                    getSurveyRepository.getSurveys("1", SurveyViewModel.from,SurveyViewModel.to).enqueue(new Callback<List<Survey>>() {
+                        @Override
+                        public void onResponse(Call<List<Survey>> call, Response<List<Survey>> response) {
+                            if (!response.isSuccessful()) {
+                                Log.e("Code: ", "onResponse: " + String.valueOf(response.code()));
+                                return;
+                            }
+                            surveyList2=response.body();
+                            //mutableLiveData.setValue(response.body());
+                            for (Survey survey: surveyList2){
+                                surveyList1.add(survey);
+                            }
+                            mutableLiveData.setValue(surveyList1);
+                            Log.i("onResponse", response.body().toString() + response.toString());
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<Survey>> call, Throwable t) {
+                            Log.e("onFailure-retrofit", t.getMessage());
+                        }
+                    });
+
+                    //mutableLiveData.setValue(surveyList1);
                     Log.i("onResponse", response.body().toString() + response.toString());
                 }
 
@@ -166,14 +210,19 @@ public class SurveyViewModel extends ViewModel {
                     Log.e("onFailure-retrofit", t.getMessage());
                 }
             });
-            getSurveyRepository.getSurveys("1", this.from, this.to).enqueue(new Callback<List<Survey>>() {
+            /*getSurveyRepository.getSurveys("1", this.from, this.to).enqueue(new Callback<List<Survey>>() {
                 @Override
                 public void onResponse(Call<List<Survey>> call, Response<List<Survey>> response) {
                     if (!response.isSuccessful()) {
                         Log.e("Code: ", "onResponse: " + String.valueOf(response.code()));
                         return;
                     }
-                    mutableLiveData.setValue(response.body());
+                    surveyList2=response.body();
+                    //mutableLiveData.setValue(response.body());
+                    for (Survey survey: surveyList2){
+                        surveyList1.add(survey);
+                    }
+                    mutableLiveData.setValue(surveyList1);
                     Log.i("onResponse", response.body().toString() + response.toString());
                 }
 
@@ -181,7 +230,8 @@ public class SurveyViewModel extends ViewModel {
                 public void onFailure(Call<List<Survey>> call, Throwable t) {
                     Log.e("onFailure-retrofit", t.getMessage());
                 }
-            });
+            });*/
+
         }
 
         /*MyRetrofit.getInstance().getSurveys(this.generic,this.from,this.to).enqueue(new Callback<List<Survey>>() {
