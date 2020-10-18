@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mayor App</string>
+
+    <string-array name="region_arrey">
+        <item>ناحیه1</item>
+        <item>ناحیه2</item>
+        <item>ناحیه3</item>
+        <item>ناحیه4</item>
+        <item>ناحیه5</item>
+
+
+    </string-array>
+
+
+</resources>

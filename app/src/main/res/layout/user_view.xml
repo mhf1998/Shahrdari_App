@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_user_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/image_user_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/user2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_view_user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/yekan"
+        android:gravity="right"
+        android:text="محمد حسین"
+        android:textColor="@color/colorHighLightTextInput"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/image_user_view"
+        app:layout_constraintStart_toEndOf="@+id/status_user_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lname_view_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/yekan"
+        android:text="فرزانگان"
+        android:textColor="@color/colorHighLightTextInput"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@+id/image_user_view"
+        app:layout_constraintTop_toBottomOf="@id/name_view_user" />
+
+    <TextView
+        android:id="@+id/code_meli_view_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/yekan"
+        android:text="1250507758"
+        android:textColor="@android:color/tertiary_text_dark"
+        android:textSize="15sp"
+        app:layout_constraintRight_toLeftOf="@id/image_user_view"
+        app:layout_constraintTop_toBottomOf="@id/lname_view_user" />
+
+    <TextView
+        android:id="@+id/region_view_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/yekan"
+        android:text="منطقه یک"
+        android:textColor="@color/colorRegionUser"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/code_meli_view_user"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Switch
+        android:id="@+id/status_user_view"
+        style="@style/TextAppearance.AppCompat.Widget.Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/yekan"
+        android:gravity="left"
+        android:padding="5dp"
+        android:text="فعال"
+        android:textColor="@color/colorNotActiveUser"
+        android:textOff="مسدود"
+        android:textOn="فعال"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/name_view_user" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_belw_view_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/region_view_user" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

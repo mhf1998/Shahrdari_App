@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titr1_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/yekan"
+            android:text="نوع نظرسنجی"
+            android:textColor="@color/colorTitleListSurvey"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_survey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginRight="65dp"
+            android:gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titr1_vote">
+
+            <RadioButton
+                android:id="@+id/generic_survey_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/yekan"
+                android:text="عمومی     "
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/special_survey_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/yekan"
+                android:text="اختصاصی"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="16sp" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gen_and_spe"
+                android:fontFamily="@font/yekan"
+                android:text="هر دو      "
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="16sp"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/title1_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/yekan"
+            android:text="از تاریخ"
+            android:textColor="@color/colorHighLightTextInput"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/day_survey_from"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_survey" />
+
+        <EditText
+            android:id="@+id/day_survey_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="روز  "
+            android:inputType="number"
+            android:maxLength="2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/title1_survey"
+            app:layout_constraintEnd_toStartOf="@+id/title1_survey"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/month_survey_from" />
+
+        <EditText
+            android:id="@+id/month_survey_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="ماه  "
+            android:inputType="number"
+
+            android:maxLength="2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/day_survey_from"
+            app:layout_constraintEnd_toStartOf="@+id/day_survey_from"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/year_survey_from" />
+
+        <EditText
+            android:id="@+id/year_survey_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="سال  "
+            android:inputType="number"
+
+            android:maxLength="4"
+            android:text="1399"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/month_survey_from"
+            app:layout_constraintEnd_toStartOf="@+id/month_survey_from"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/year_survey_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="سال  "
+            android:inputType="number"
+
+            android:maxLength="4"
+            android:text="1399"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/month_survey_to"
+            app:layout_constraintEnd_toStartOf="@+id/month_survey_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/title2_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/yekan"
+            android:text="تا تاریخ"
+            android:textColor="@color/colorHighLightTextInput"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/day_survey_to"
+            app:layout_constraintTop_toBottomOf="@+id/title1_survey" />
+
+        <EditText
+            android:id="@+id/day_survey_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="روز  "
+            android:inputType="number"
+            android:maxLength="2"
+
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/title2_survey"
+            app:layout_constraintEnd_toStartOf="@+id/title2_survey"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/month_survey_to" />
+
+        <EditText
+            android:id="@+id/month_survey_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:hint="ماه  "
+            android:inputType="number"
+            android:maxLength="2"
+
+
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/day_survey_to"
+            app:layout_constraintEnd_toStartOf="@+id/day_survey_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/year_survey_to" />
+
+        <ImageView
+            android:id="@+id/search_survey"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/yekan"
+            android:src="@drawable/search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/month_survey_to" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_survey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_survey" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:id="@+id/recyclerview_survey2"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview_survey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/nofindsurvey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/yekanbold"
+            android:text="نظرسنجی در این بازه زمانی یافت نشد!"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_survey" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

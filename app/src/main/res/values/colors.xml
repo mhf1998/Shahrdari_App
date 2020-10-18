@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#02DFFB</color>
+    <color name="colorPrimaryDark">#36C2FF</color>
+    <color name="colorAccent">#55B8D1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorHighLightTextInput">#3F51B5</color>
+    <color name="colorEditTextInput">#4A4A4A</color>
+    <color name="black">#000000</color>
+    <color name="colorTitleNews">#00BCD4</color>
+    <color name="colorTitleListSurvey">#1DB0C3</color>
+    <color name="colorTitleDialogNews">#2C2C2C</color>
+    <color name="colorBodyDialogNews">#595959</color>
+    <color name="colorSubjectNewsView">#494949</color>
+    <color name="colorBackGroundViewSurvey">#48000000</color>
+    <color name="colorRegionUser">#01B8A6</color>
+    <color name="colorNotActiveUser">#F44336</color>
+</resources>

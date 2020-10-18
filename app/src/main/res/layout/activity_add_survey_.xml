@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/title_layout_survey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:fontFamily="@font/yekan"
+        android:text="اضافه کردن نظر سنجی"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/add_survey_layout_header"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/add_survey_layout_header"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/title_layout_survey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/surv04" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_add_survey1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/yekan"
+        android:hint="موضوع"
+        android:padding="7dp"
+        android:textColorHint="@android:color/tertiary_text_light"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_survey_layout_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_subject_add_survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:focusable="true"
+            android:fontFamily="@font/yekan"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/colorEditTextInput"
+            android:textColorHighlight="@color/colorHighLightTextInput"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/check_generic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:checked="false"
+        android:fontFamily="@font/yekan"
+        android:text="نظرسنجی اختصاصی"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_add_survey1" />
+
+    <Spinner
+        android:id="@+id/spinner_region"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/yekan"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_generic" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_add_survey2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/yekan"
+        android:textColorHint="@android:color/tertiary_text_light"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_region">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_op1_add_survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:enabled="true"
+            android:fontFamily="@font/yekan"
+            android:hint="گزینه اول"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/colorEditTextInput"
+            android:textColorHighlight="@color/colorHighLightTextInput"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_add_survey3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/yekan"
+        android:textColorHint="@android:color/tertiary_text_light"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_add_survey2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_op2_add_survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:enabled="true"
+            android:fontFamily="@font/yekan"
+            android:hint="گزینه دوم"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/colorEditTextInput"
+            android:textColorHighlight="@color/colorHighLightTextInput"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_add_survey4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/yekan"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:visibility="gone"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_add_survey3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_op3_add_survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:enabled="true"
+            android:fontFamily="@font/yekan"
+            android:hint="گزینه سوم"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/colorEditTextInput"
+            android:textColorHighlight="@color/colorHighLightTextInput"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_add_survey5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/yekan"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:visibility="gone"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_add_survey4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_op4_add_survey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:enabled="true"
+            android:fontFamily="@font/yekan"
+            android:hint="گزینه چهارم"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/colorEditTextInput"
+            android:textColorHighlight="@color/colorHighLightTextInput"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/check_add_opt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:checked="false"
+        android:fontFamily="@font/yekan"
+        android:text="گزینه های بیشتر"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_add_survey5" />
+
+    <ImageView
+        android:id="@+id/imageview_add_survey_pic"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/button_add_pic_survey"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/check_add_opt"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <CheckBox
+        android:id="@+id/check_add_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:checked="false"
+        android:fontFamily="@font/yekan"
+        android:text="افزودن تصویر"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_add_opt" />
+
+    <Button
+        android:id="@+id/button_add_pic_survey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/yekan"
+        android:text="انتخاب"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+
+        app:layout_constraintEnd_toStartOf="@+id/check_add_pic"
+        app:layout_constraintTop_toBottomOf="@+id/check_add_opt" />
+
+    <Button
+        android:id="@+id/button_ok"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/signin_dialog_btn2"
+        android:fontFamily="@font/yekan"
+        android:padding="20dp"
+        android:text="افزودن"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_add_pic" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+    <!--    <RelativeLayout-->
+<!--        android:id="@+id/relative_add_survey_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:id="@+id/lin_titr_survey">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/title_layout_survey"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:text="اضافه کردن نظرسنجی"-->
+<!--                android:textColor="@color/design_default_color_primary_dark"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="20sp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:fontFamily="@font/yekanbold"-->
+<!--                />-->
+<!--            <ImageView-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:src="@drawable/surv04"-->
+<!--                android:id="@+id/add_survey_layout_header"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:padding="2dp"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/lin_titr_survey"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:textColorHint="@android:color/tertiary_text_light"-->
+<!--            android:id="@+id/text_input_layout_add_survey1"-->
+<!--            android:padding="5dp"-->
+<!--            android:fontFamily="@font/yekan"-->
+
+<!--            >-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="موضوع"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:focusable="true"-->
+<!--                android:textColorHighlight="#3F51B5"-->
+<!--                android:textColor="#4A4A4A"-->
+<!--                android:textSize="20sp"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:id="@+id/edit_text_subject_add_survey"-->
+<!--                android:fontFamily="@font/yekan"-->
+
+
+<!--                />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <CheckBox-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/check_generic"-->
+<!--            android:layout_below="@id/text_input_layout_add_survey1"-->
+<!--            android:layout_alignRight="@id/text_input_layout_add_survey1"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:text="نظرسنجی اختصاصی"-->
+<!--            android:checked="false"-->
+<!--            android:fontFamily="@font/yekan"-->
+
+<!--            />-->
+<!--        <Spinner-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:layout_marginRight="50dp"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_below="@+id/check_generic"-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/spinner_region"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            />-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/spinner_region"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:textColorHint="@android:color/tertiary_text_light"-->
+<!--            android:id="@+id/text_input_layout_add_survey2"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            >-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="گزینه اول"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:focusable="true"-->
+<!--                android:textColorHighlight="#3F51B5"-->
+<!--                android:textColor="#4A4A4A"-->
+<!--                android:textSize="20sp"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:fontFamily="@font/yekan"-->
+<!--                android:id="@+id/edit_text_op1_add_survey"-->
+<!--                android:enabled="true"/>-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/text_input_layout_add_survey2"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            android:textColorHint="@android:color/tertiary_text_light"-->
+<!--            android:id="@+id/text_input_layout_add_survey3"-->
+<!--            >-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="گزینه دوم"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:focusable="true"-->
+<!--                android:fontFamily="@font/yekan"-->
+<!--                android:textColorHighlight="#3F51B5"-->
+<!--                android:textColor="#4A4A4A"-->
+<!--                android:textSize="20sp"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:id="@+id/edit_text_op2_add_survey"-->
+<!--                android:enabled="true"/>-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/text_input_layout_add_survey3"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:textColorHint="@android:color/tertiary_text_light"-->
+<!--            android:id="@+id/text_input_layout_add_survey4"-->
+<!--            android:visibility="gone"-->
+<!--            >-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:fontFamily="@font/yekan"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="گزینه سوم"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:focusable="true"-->
+<!--                android:textColorHighlight="#3F51B5"-->
+<!--                android:textColor="#4A4A4A"-->
+<!--                android:textSize="20sp"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:id="@+id/edit_text_op3_add_survey"-->
+<!--                />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/text_input_layout_add_survey4"-->
+<!--            app:hintAnimationEnabled="true"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:textColorHint="@android:color/tertiary_text_light"-->
+<!--            android:id="@+id/text_input_layout_add_survey5"-->
+<!--            android:visibility="gone"-->
+<!--            >-->
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="گزینه چهارم"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:focusable="true"-->
+<!--                android:textColorHighlight="#3F51B5"-->
+<!--                android:textColor="#4A4A4A"-->
+<!--                android:textSize="20sp"-->
+<!--                android:fontFamily="@font/yekan"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:maxLines="5"-->
+<!--                android:id="@+id/edit_text_op4_add_survey"-->
+<!--                />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <CheckBox-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/text_input_layout_add_survey5"-->
+<!--            android:layout_alignRight="@+id/text_input_layout_add_survey3"-->
+<!--            android:text="گزینه های بیشتر"-->
+<!--            android:textSize="18sp"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            android:checked="false"-->
+<!--            android:id="@+id/check_add_opt"-->
+<!--            />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/add_pic_linear_layout"-->
+<!--            android:layout_below="@id/check_add_opt"-->
+<!--            android:layout_alignRight="@id/check_add_opt"-->
+<!--            android:gravity="right"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageview_add_survey_pic"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="gone"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/button_add_pic_survey"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:layout_marginRight="40dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:fontFamily="@font/yekan"-->
+<!--                android:text="انتخاب"-->
+<!--                android:background="@drawable/bg_btn"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:visibility="gone"-->
+<!--                />-->
+
+<!--            <CheckBox-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="افزودن تصویر"-->
+<!--                android:textSize="18sp"-->
+<!--                android:fontFamily="@font/yekan"-->
+
+<!--                android:id="@+id/check_add_pic"-->
+<!--                android:checked="false"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/button_ok"-->
+<!--            android:layout_below="@+id/add_pic_linear_layout"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:text="افزودن"-->
+<!--            android:textSize="20sp"-->
+<!--            android:fontFamily="@font/yekan"-->
+<!--            android:background="@drawable/signin_dialog_btn2"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:padding="20dp"-->
+<!--            style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--            android:textColor="#FFFFFF"/>-->
+
+<!--    </RelativeLayout>-->
+
+
+

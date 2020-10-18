@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/title_news_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/yekan"
+        android:text="جدیدترین اخبار را اضافه کن"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/news_titr_pic"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/news_titr_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:src="@drawable/newstitr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/title_news_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/titr1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:fontFamily="@font/yekan"
+        android:text="موضوع"
+        android:textColor="@color/colorTitleNews"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news_titr_pic" />
+
+    <EditText
+        android:id="@+id/subject_news"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:fontFamily="@font/yekan"
+        android:hint="موضوع خبر را وارد کنید"
+        android:inputType="text"
+        android:maxLength="50"
+        android:maxLines="1"
+        android:textColor="@android:color/tab_indicator_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titr1" />
+
+    <TextView
+        android:id="@+id/titr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:fontFamily="@font/yekan"
+        android:text="مشروح خبر"
+        android:textColor="@color/colorTitleNews"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject_news" />
+
+    <EditText
+        android:id="@+id/body_news"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/yekan"
+        android:hint="شرح خبر را راورد کنید"
+        android:inputType="textMultiLine"
+        android:maxHeight="80dp"
+        android:maxLength="500"
+        android:textColor="@android:color/tab_indicator_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titr2" />
+
+
+    <TextView
+        android:id="@+id/titr3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:fontFamily="@font/yekan"
+        android:text="خبر جزو کدام دسته است؟"
+        android:textColor="@color/colorTitleNews"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/body_news" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_news"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titr3">
+
+        <RadioButton
+            android:id="@+id/shahrdari_btn_news_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/yekan"
+            android:text="شهرداری"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kashan_btn_news_tag" />
+
+        <RadioButton
+            android:id="@+id/kashan_btn_news_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/yekan"
+            android:text="کاشان"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titr3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/titr4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:fontFamily="@font/yekan"
+        android:text="تصویر خبر"
+        android:textColor="@color/colorTitleNews"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_news" />
+
+    <Button
+        android:id="@+id/btn_pic_news"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/yekan"
+        android:padding="5dp"
+        android:text="انتخاب تصویر"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/titr4"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_news" />
+
+    <ImageView
+        android:id="@+id/image_news"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pic_news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_news" />
+
+    <Button
+        android:id="@+id/btn_add_news"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/signin_dialog_btn2"
+        android:fontFamily="@font/yekan"
+        android:text="افزودن خبر"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titr4" />
+
+    <LinearLayout
+        android:id="@+id/linear_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_next_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="-27dp"
+            android:background="@drawable/bg_click_news_layout"
+            android:fontFamily="@font/yekan"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:text="لیست اخبار "
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="62dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:src="@drawable/next" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--</ScrollView>-->
+<!--    android:layout_alignTop="@+id/btn_next_list"-->
+<!--    android:layout_alignBottom="@+id/btn_next_list"-->
+<!--    android:layout_marginLeft="-86dp"-->
