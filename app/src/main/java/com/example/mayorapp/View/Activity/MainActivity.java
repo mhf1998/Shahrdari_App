@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mayorapp.BaseApplication;
 import com.example.mayorapp.Model.MyResponse;
+import com.example.mayorapp.Model.MyResponseLogin;
 import com.example.mayorapp.ViewModel.SignInViewModel;
 import com.example.mayorapp.databinding.ActivityMainBinding;
 
@@ -50,19 +51,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 signInViewModel.signIn(binding.editTextSigninDialogUser.getText().toString().trim(),binding.editTextSigninDialogPass.getText().toString().trim()).observe(
                         MainActivity.this,
-                        new Observer<MyResponse>() {
+                        new Observer<MyResponseLogin>() {
                             @Override
-                            public void onChanged(MyResponse myResponse) {
-                                if (myResponse.getResponse().equals("user is valid")){
+                            public void onChanged(MyResponseLogin myResponseLogin) {
+                                if (myResponseLogin.getResponse().equals("user is valid")){
                                     Toast.makeText(MainActivity.this, "خوش آمدید", Toast.LENGTH_SHORT).show();
-
+                                    userID=myResponseLogin.getU_id();
                                     Intent intent=new Intent(MainActivity.this, MenuActivity.class);
-                                    intent.putExtra("user",binding.editTextSigninDialogUser.getText().toString().trim());
                                     startActivity(intent);                                }
-                                else if (myResponse.getResponse().equals("Blocked user")){
+                                else if (myResponseLogin.getResponse().equals("Blocked user")){
                                     Toast.makeText(MainActivity.this, "دسترسی شما غیرمجاز است!", Toast.LENGTH_SHORT).show();
                                 }
-                                else if (myResponse.getResponse().equals("invalid user")){
+                                else if (myResponseLogin.getResponse().equals("invalid user")){
                                     Toast.makeText(MainActivity.this, "چنین کاربری یافت نشد!", Toast.LENGTH_SHORT).show();
                                 }
                             }

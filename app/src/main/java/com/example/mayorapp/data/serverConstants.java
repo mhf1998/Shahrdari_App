@@ -1,7 +1,7 @@
 package com.example.mayorapp.data;
 
 public class serverConstants {
-    public static final String ROOT_URL = "http://192.168.43.225/API/";
+    public static final String ROOT_URL = "http://192.168.1.4/API/";
     public static final String Register_URL = ROOT_URL+"insertUser.php";                      //post
     public static final String SignIn_URL = "userAuth.php";                          //get
     public static final String addSurvey2op_URL = "insertVote.php";                  //post

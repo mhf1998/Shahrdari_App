@@ -12,7 +12,6 @@ import com.example.mayorapp.databinding.ActivityMenuBinding;
 public class MenuActivity extends AppCompatActivity {
     private ActivityMenuBinding binding;
 
-    public Bundle bundle;
     private String TAG="MENU ACTIVITY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +22,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(view);
 
         getSupportActionBar().hide();
-        bundle=new Bundle();
-        final String username = getIntent().getStringExtra("user");
-        Log.i(TAG, "onCreate: "+ username);
 
         binding.addSurveyMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +40,8 @@ public class MenuActivity extends AppCompatActivity {
         binding.userMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MenuActivity.this , Users_Activity.class);
-                intent.putExtra("user",username);
-                startActivity(intent);
+                startActivity(new Intent(MenuActivity.this , Users_Activity.class));
+
             }
         });
 

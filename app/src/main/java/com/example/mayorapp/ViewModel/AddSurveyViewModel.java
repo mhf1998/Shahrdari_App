@@ -101,7 +101,7 @@ public class AddSurveyViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<MyResponse> call, Throwable t) {
-
+                Log.e(TAG, "onFailure: ", t);
             }
         });
         /*MyRetrofit.getInstance().addSurvey2OpPic(u_id,subject,pic,gen,op1,op2,region).enqueue(new Callback<MyResponse>() {
@@ -137,7 +137,7 @@ public class AddSurveyViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<MyResponse> call, Throwable t) {
-
+                Log.e(TAG, "onFailure: ", t);
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.mayorapp.data;
 
+import com.example.mayorapp.Model.MyResponseLogin;
 import com.example.mayorapp.Model.News;
 import com.example.mayorapp.Model.Option;
 import com.example.mayorapp.Model.MyResponse;
@@ -87,7 +88,7 @@ public interface Api {
 
 
     @GET(serverConstants.SignIn_URL)
-    Call<MyResponse> signIn(
+    Call<MyResponseLogin> signIn(
             @Query("username") String username,
             @Query("password") String password
     );

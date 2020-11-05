@@ -2,6 +2,7 @@ package com.example.mayorapp.data;
 
 import android.util.Log;
 
+import com.example.mayorapp.Model.MyResponseLogin;
 import com.example.mayorapp.Model.News;
 import com.example.mayorapp.Model.Option;
 import com.example.mayorapp.Model.MyResponse;
@@ -108,7 +109,7 @@ public class MyRetrofit {
         return api.insertNews(subject,tag,pic,body);
     }
 
-    public Call<MyResponse> signIn(String username,String password){
+    public Call<MyResponseLogin> signIn(String username, String password){
         return api.signIn(username,password);
     }
 

@@ -1,6 +1,7 @@
 package com.example.mayorapp.Repository;
 
 import com.example.mayorapp.Model.MyResponse;
+import com.example.mayorapp.Model.MyResponseLogin;
 import com.example.mayorapp.data.Api;
 
 import javax.inject.Inject;
@@ -15,7 +16,7 @@ public class SignInRepository {
         this.api = api;
     }
 
-    public Call<MyResponse> signIn(String username, String password){
+    public Call<MyResponseLogin> signIn(String username, String password){
         return api.signIn(username,password);
     }
 }

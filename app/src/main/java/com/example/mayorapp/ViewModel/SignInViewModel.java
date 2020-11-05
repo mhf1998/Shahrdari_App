@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.mayorapp.Model.MyResponse;
+import com.example.mayorapp.Model.MyResponseLogin;
 import com.example.mayorapp.Repository.SignInRepository;
 
 import javax.inject.Inject;
@@ -17,7 +18,7 @@ import retrofit2.Response;
 
 public class SignInViewModel extends ViewModel {
     private SignInRepository signInRepository;
-    MutableLiveData<MyResponse> mutableLiveData=new MutableLiveData<MyResponse>();
+    MutableLiveData<MyResponseLogin> mutableLiveData=new MutableLiveData<MyResponseLogin>();
     private static String TAG="SignIn";
 
     @Inject
@@ -25,15 +26,15 @@ public class SignInViewModel extends ViewModel {
         this.signInRepository = signInRepository;
     }
 
-    public LiveData<MyResponse> signIn(String username, String password){
+    public LiveData<MyResponseLogin> signIn(String username, String password){
         signin(username,password);
         return mutableLiveData;
     }
 
     private void signin(String username, String password) {
-       signInRepository.signIn(username,password).enqueue(new Callback<MyResponse>() {
+       signInRepository.signIn(username,password).enqueue(new Callback<MyResponseLogin>() {
             @Override
-            public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+            public void onResponse(Call<MyResponseLogin> call, Response<MyResponseLogin> response) {
                 if (!response.isSuccessful()){
                     Log.e(TAG, "onResponse: "+response.toString() );
                     return;
@@ -43,7 +44,7 @@ public class SignInViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(Call<MyResponse> call, Throwable t) {
+            public void onFailure(Call<MyResponseLogin> call, Throwable t) {
                 Log.e(TAG, "onFailure: ",t );
             }
         });
